@@ -11,6 +11,7 @@ options = Options()
 
 options.add_argument("--start-maximized")
 options.add_argument("disable-blink-features=AutomationControlled")
+# options.add_experimental_option("detach", True)
 options.add_experimental_option("useAutomationExtension", False)
 
 driver = Chrome(options=options)
@@ -41,7 +42,18 @@ try:
                 print(f"Current URL: {current_url}")
                 print(f"Webpage content:\n {driver.page_source}")
 
-                input("Press Enter to quit")
+                prompt = input("Press Enter to quit or type 'logout' to Logout:\t")
+                if prompt.lower() == 'logout':
+                    logout_btn = driver.find_element(by=By.CLASS_NAME, value="button")
+                    if logout_btn:
+                        try:
+                            logout_btn.click()
+                        except:
+                            driver.execute_script("arguments[0].click();", logout_btn)
+                    else:
+                        print("No logout button found!")
+                else:
+                    print("Quiting browser...")
         except:
             driver.execute_script("arguments[0].click();", submit)
 
