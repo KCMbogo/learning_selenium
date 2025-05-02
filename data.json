@@ -1,0 +1,13 @@
+{
+    "names": ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5"],
+    "emails": [
+        "email1@gmail.com",
+        "email2@gmail.com",
+        "email3@gmail.com",
+        "email4@gmail.com",
+        "email4@gmail.com"
+    ],
+    "experiences": [
+        "Good", "Bad", "Normal", "Pleasing", "Moderate", "Poor", "Best", "Worst", "One of a kind"
+    ]
+}
